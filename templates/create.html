@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Добавление товара</title>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1 style="font-style: oblique" class="fw-normal">Добавление товара</h1>
+        <form method="post">
+            <input type="text" name="name" id="name" class="container form-control form-control-lg" placeholder="Введите название продукта"><br>
+            <input type="number" name="weight" id="weight" class="container form-control" placeholder="Введите вес продукта"><br>
+            <input type="number" name="price" id="price" class="container form-control" placeholder="Введите цену продукта"><br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <input type="submit" class="btn btn-success" value=Добавить>
+            </div>
+        </form>
+    </div>
+{% endblock %}

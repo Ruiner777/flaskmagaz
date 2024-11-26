@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Домашняя страница</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 style="font-style: oblique" class="fw-normal">Онлайн магазин</h1>
+    <p style="opacity: 0.7" class="fs-5 text-muted">Онлайн магазин для покупки разных товаров</p>
+</div>
+
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+        {% for el in data %}
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">{{ el.name }}</h4>
+                </div>
+                <div style="text-align: center" class="card-body">
+                    <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-muted fw-light"> Рублей</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Вес: {{ el.weight }} грамм</li>
+                    </ul>
+                    <a   type="button" class="w-100 btn btn-lg btn-outline-primary">Купить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
